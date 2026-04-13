@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopNova — Sua loja online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">Shop<span>Nova</span></a>
+    <ul class="nav-links">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#oferta">Ofertas</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-cart" id="cartBtn" title="Ver carrinho">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="btn-login">Entrar</button>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#oferta">Ofertas</a>
+    <a href="#contato">Contato</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-bolt"></i>
+        Frete grátis em pedidos acima de R$199
+      </div>
+      <h1>Tudo que você precisa,<br><span>entregue na sua porta.</span></h1>
+      <p>Descubra milhares de produtos com os melhores preços. Compra segura, entrega rápida e suporte 24 horas.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-shopping-bag"></i> Ver Produtos
+        </button>
+        <button class="btn-outline">
+          <i class="fas fa-play"></i> Como funciona
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-number">50k+</div><div class="stat-label">Produtos</div></div>
+        <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Satisfação</div></div>
+        <div class="stat"><div class="stat-number">24h</div><div class="stat-label">Suporte</div></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-card"><div class="hero-card-img">👟</div><h4>Tênis Runner Pro</h4><div class="hero-card-price">R$ 299,90</div></div>
+      <div class="hero-card"><div class="hero-card-img">🎧</div><h4>Fone Bluetooth</h4><div class="hero-card-price">R$ 189,90</div></div>
+      <div class="hero-card"><div class="hero-card-img">⌚</div><h4>Smartwatch Ultra</h4><div class="hero-card-price">R$ 599,90</div></div>
+      <div class="hero-card"><div class="hero-card-img">💻</div><h4>Notebook Slim</h4><div class="hero-card-price">R$ 3.299,90</div></div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <div class="benefits">
+    <div class="benefit-item"><i class="fas fa-truck"></i><div><h4>Frete Grátis</h4><p>Em pedidos acima de R$199</p></div></div>
+    <div class="benefit-item"><i class="fas fa-shield-alt"></i><div><h4>Compra Segura</h4><p>Seus dados protegidos</p></div></div>
+    <div class="benefit-item"><i class="fas fa-undo"></i><div><h4>Devolução Fácil</h4><p>30 dias para devolver</p></div></div>
+    <div class="benefit-item"><i class="fas fa-headset"></i><div><h4>Suporte 24h</h4><p>Sempre disponível</p></div></div>
+  </div>
+
+  <!-- PRODUTOS -->
+  <section class="products" id="produtos">
+    <div class="section-header">
+      <span class="section-tag">Catálogo</span>
+      <h2>Produtos em Destaque</h2>
+      <p>Selecionamos os melhores para você</p>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-btn active" onclick="filterProducts(this, 'todos')">Todos</button>
+      <button class="filter-btn" onclick="filterProducts(this, 'eletronicos')">Eletrônicos</button>
+      <button class="filter-btn" onclick="filterProducts(this, 'moda')">Moda</button>
+      <button class="filter-btn" onclick="filterProducts(this, 'esporte')">Esporte</button>
+    </div>
+    <div class="products-grid" id="productsGrid">
+
+      <div class="product-card" data-category="eletronicos">
+        <span class="product-badge">-30%</span>
+        <div class="product-actions">
+          <button class="action-btn"><i class="fas fa-heart"></i></button>
+          <button class="action-btn"><i class="fas fa-eye"></i></button>
+        </div>
+        <div class="product-img">🎧</div>
+        <div class="product-info">
+          <div class="product-category">Eletrônicos</div>
+          <div class="product-name">Fone de Ouvido Bluetooth Pro</div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(128)</span></div>
+          <div class="product-footer">
+            <div class="product-price"><span class="price-original">R$ 269,90</span><span class="price-current">R$ 189,90</span></div>
+            <button class="btn-add-cart" onclick="addToCart(this)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="eletronicos">
+        <span class="product-badge new">Novo</span>
+        <div class="product-actions">
+          <button class="action-btn"><i class="fas fa-heart"></i></button>
+          <button class="action-btn"><i class="fas fa-eye"></i></button>
+        </div>
+        <div class="product-img">⌚</div>
+        <div class="product-info">
+          <div class="product-category">Eletrônicos</div>
+          <div class="product-name">Smartwatch Ultra Series 5</div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(84)</span></div>
+          <div class="product-footer">
+            <div class="product-price"><span class="price-original">R$ 799,90</span><span class="price-current">R$ 599,90</span></div>
+            <button class="btn-add-cart" onclick="addToCart(this)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="moda">
+        <div class="product-actions">
+          <button class="action-btn"><i class="fas fa-heart"></i></button>
+          <button class="action-btn"><i class="fas fa-eye"></i></button>
+        </div>
+        <div class="product-img">👕</div>
+        <div class="product-info">
+          <div class="product-category">Moda</div>
+          <div class="product-name">Camiseta Premium Slim Fit</div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(256)</span></div>
+          <div class="product-footer">
+            <div class="product-price"><span class="price-original">R$ 89,90</span><span class="price-current">R$ 59,90</span></div>
+            <button class="btn-add-cart" onclick="addToCart(this)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="esporte">
+        <span class="product-badge">-20%</span>
+        <div class="product-actions">
+          <button class="action-btn"><i class="fas fa-heart"></i></button>
+          <button class="action-btn"><i class="fas fa-eye"></i></button>
+        </div>
+        <div class="product-img">👟</div>
+        <div class="product-info">
+          <div class="product-category">Esporte</div>
+          <div class="product-name">Tênis Runner Pro Boost</div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(312)</span></div>
+          <div class="product-footer">
+            <div class="product-price"><span class="price-original">R$ 369,90</span><span class="price-current">R$ 299,90</span></div>
+            <button class="btn-add-cart" onclick="addToCart(this)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="eletronicos">
+        <div class="product-actions">
+          <button class="action-btn"><i class="fas fa-heart"></i></button>
+          <button class="action-btn"><i class="fas fa-eye"></i></button>
+        </div>
+        <div class="product-img">📱</div>
+        <div class="product-info">
+          <div class="product-category">Eletrônicos</div>
+          <div class="product-name">Smartphone Nova X15</div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(189)</span></div>
+          <div class="product-footer">
+            <div class="product-price"><span class="price-original">R$ 2.499,90</span><span class="price-current">R$ 1.999,90</span></div>
+            <button class="btn-add-cart" onclick="addToCart(this)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="moda">
+        <span class="product-badge new">Novo</span>
+        <div class="product-actions">
+          <button class="action-btn"><i class="fas fa-heart"></i></button>
+          <button class="action-btn"><i class="fas fa-eye"></i></button>
+        </div>
+        <div class="product-img">👜</div>
+        <div class="product-info">
+          <div class="product-category">Moda</div>
+          <div class="product-name">Bolsa Couro Legítimo</div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(67)</span></div>
+          <div class="product-footer">
+            <div class="product-price"><span class="price-original">R$ 489,90</span><span class="price-current">R$ 389,90</span></div>
+            <button class="btn-add-cart" onclick="addToCart(this)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BANNER PROMOÇÃO -->
+  <div class="promo-banner" id="oferta">
+    <div class="promo-content">
+      <span class="promo-tag">⚡ Oferta Relâmpago</span>
+      <h2>Até 50% OFF em<br>Eletrônicos Selecionados</h2>
+      <p>Válido até domingo • Estoque limitado</p>
+    </div>
+    <button class="btn-promo" onclick="showToast('Em breve! 🚀')">Aproveitar Agora</button>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="contato">
+    <span class="section-tag">Newsletter</span>
+    <h2>Fique por dentro das ofertas</h2>
+    <p>Receba promoções exclusivas diretamente no seu e-mail</p>
+    <div class="newsletter-form">
+      <input type="email" id="emailInput" placeholder="Seu melhor e-mail">
+      <button onclick="subscribeNewsletter()"><i class="fas fa-paper-plane"></i> Inscrever</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">Shop<span>Nova</span></a>
+        <p>Sua loja online de confiança. Produtos de qualidade com os melhores preços e entrega rápida para todo o Brasil.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Carreiras</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Parceiros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ajuda</h4>
+        <ul>
+          <li><a href="#">Central de ajuda</a></li>
+          <li><a href="#">Como comprar</a></li>
+          <li><a href="#">Rastrear pedido</a></li>
+          <li><a href="#">Devoluções</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#">contato@shopnova.com</a></li>
+          <li><a href="#">(11) 9999-9999</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Chat ao vivo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ShopNova. Todos os direitos reservados.</p>
+      <div class="payment-icons">
+        <span class="payment-icon">VISA</span>
+        <span class="payment-icon">MASTER</span>
+        <span class="payment-icon">PIX</span>
+        <span class="payment-icon">BOLETO</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Produto adicionado!</span>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
